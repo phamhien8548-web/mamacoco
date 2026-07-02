@@ -133,4 +133,35 @@ public class EventImageRepository {
             );
         }
     }
+    // ==========================================
+    // HÀM UPDATE ĐƯỢC THÊM VÀO Ở ĐÂY
+    // ==========================================
+    public void update(EventImage image) {
+        // 1. Nếu ảnh này được sửa thành ảnh Banner, hạ hết các banner khác của sự kiện này xuống
+        if (image.isBanner()) {
+            jdbcTemplate.update(
+                    "UPDATE event_images SET is_banner = FALSE WHERE event_id = ?",
+                    image.getEventId()
+            );
+        }
+
+        // 2. Chạy lệnh UPDATE cập nhật thông tin ảnh trong bảng event_images
+        String sql = "UPDATE event_images SET event_id = ?, image_url = ?, is_banner = ? WHERE id = ?";
+        jdbcTemplate.update(
+                sql,
+                image.getEventId(),
+                image.getImageUrl(),
+                image.isBanner(),
+                image.getId()
+        );
+
+        // 3. Nếu là banner, đồng bộ cập nhật luôn cột banner_image bên bảng events
+        if (image.isBanner()) {
+            jdbcTemplate.update(
+                    "UPDATE events SET banner_image = ? WHERE id = ?",
+                    image.getImageUrl(),
+                    image.getEventId()
+            );
+        }
+    }
 }

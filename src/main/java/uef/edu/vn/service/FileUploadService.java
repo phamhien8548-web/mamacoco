@@ -23,13 +23,16 @@ public class FileUploadService {
         }
 
         try {
-            // 1. Kiểm tra và tự động tạo thư mục C:/event_images/ nếu nó chưa tồn tại trên máy
-            File dir = new File(UPLOAD_DIR);
+            // Lấy đường dẫn thật của webapp/assets/uploads/events/
+            String uploadDir = request.getServletContext()
+                    .getRealPath("/assets/uploads/events/");
+
+            File dir = new File(uploadDir);
             if (!dir.exists()) {
                 dir.mkdirs();
             }
 
-            // 2. Tạo tên file mới (Mã hóa UUID) để tránh việc up 2 ảnh trùng tên bị ghi đè
+            // Tạo tên file UUID để tránh trùng
             String originalFilename = file.getOriginalFilename();
             String extension = "";
             if (originalFilename != null && originalFilename.contains(".")) {
@@ -37,16 +40,15 @@ public class FileUploadService {
             }
             String newFilename = UUID.randomUUID().toString() + extension;
 
-            // 3. Tiến hành copy file từ Form người dùng dán thẳng vào ổ đĩa C
-            Path path = Paths.get(UPLOAD_DIR + newFilename);
+            Path path = Paths.get(uploadDir, newFilename);
             Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 
-            // Trả về tên file để lưu vào Database (ví dụ: a1b2c3d4.jpg)
             return newFilename;
 
         } catch (Exception e) {
-            System.err.println("Lỗi Upload File vào ổ C: " + e.getMessage());
+            System.err.println("Lỗi Upload File: " + e.getMessage());
             return null;
         }
     }
 }
+

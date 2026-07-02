@@ -11,7 +11,7 @@
 <div class="container my-4">
     <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
         <div>
-            <h2 class="text-dark fw-bold mb-0">
+            <h2 class="fw-bold mb-0" style="color:var(--tx)">
                 <i class="fa-solid fa-receipt text-primary"></i> ĐỐI SOÁT HÓA ĐƠN TÀI CHÍNH (ADMIN)
             </h2>
             <p class="text-muted small mb-0">Danh sách hóa đơn được tạo tự động tương ứng với dòng tiền mặt thực tế thu được.</p>
@@ -50,7 +50,7 @@
                                     <tr>
                                         <td class="text-center fw-bold text-primary">#${inv.invoiceID}</td>
                                         <td class="text-center fw-bold text-secondary">Đơn #${inv.bookingID}</td>
-                                        <td><code class="fs-6 text-dark fw-bold">${inv.invoiceNumber}</code></td>
+                                        <td><code class="fs-6 fw-bold" style="color:var(--pur)">${inv.invoiceNumber}</code></td>
                                         <td class="text-end fw-bold text-success">
                                             <fmt:formatNumber value="${inv.amount}" type="number"/> đ
                                         </td>

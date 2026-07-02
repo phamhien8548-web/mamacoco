@@ -9,7 +9,7 @@
 --%>
 
 <div class="container my-5" style="max-width: 650px;">
-    <div class="card shadow border-0">
+    <div class="card booking-card shadow border-0">
 
         <div class="card-header bg-danger text-white text-center py-3">
             <h4 class="mb-0 fw-bold">
@@ -40,7 +40,7 @@
                 <form:hidden path="eventId" />
 
                 <%-- Thông tin sự kiện đang đặt vé --%>
-                <div class="alert alert-light border-danger border-2 mb-3">
+                <div class="alert theme-alert border-danger border-2 mb-3">
                     <div class="fw-bold text-danger mb-1">
                         <i class="fa-solid fa-calendar-star"></i> Sự kiện:
                     </div>
@@ -54,7 +54,7 @@
 
                 <%-- Chọn loại vé --%>
                 <div class="mb-3">
-                    <label class="form-label fw-bold text-secondary">
+                    <label class="form-label fw-bold">
                         Chọn Loại Vé: <span class="text-danger">*</span>
                     </label>
                     <%--
@@ -81,11 +81,11 @@
 
                 <%-- Họ tên khách hàng — auto-fill từ session, readonly nếu đã đăng nhập --%>
                 <div class="mb-3">
-                    <label class="form-label fw-bold text-secondary">
+                    <label class="form-label fw-bold">
                         Họ và Tên Người Mua: <span class="text-danger">*</span>
                     </label>
                     <form:input path="customerName"
-                                class="form-control bg-light"
+                                class="form-control"
                                 placeholder="Nhập đầy đủ họ tên..."
                                 readonly="${not empty sessionScope.currentUser ? 'true' : 'false'}" />
                     <form:errors path="customerName" class="text-danger small mt-1 d-block" />
@@ -93,12 +93,12 @@
 
                 <%-- Email — auto-fill từ session --%>
                 <div class="mb-3">
-                    <label class="form-label fw-bold text-secondary">
+                    <label class="form-label fw-bold">
                         Email nhận vé điện tử: <span class="text-danger">*</span>
                     </label>
                     <form:input path="customerEmail"
                                 type="email"
-                                class="form-control bg-light"
+                                class="form-control"
                                 placeholder="username@gmail.com"
                                 readonly="${not empty sessionScope.currentUser ? 'true' : 'false'}" />
                     <form:errors path="customerEmail" class="text-danger small mt-1 d-block" />
@@ -106,7 +106,7 @@
 
                 <%-- Số lượng vé --%>
                 <div class="mb-4">
-                    <label class="form-label fw-bold text-secondary">Số lượng vé:</label>
+                    <label class="form-label fw-bold">Số lượng vé:</label>
                     <form:input path="quantity"
                                 type="number"
                                 class="form-control text-center fw-bold fs-5 border-danger"

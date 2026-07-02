@@ -11,7 +11,7 @@
 <div class="container-fluid my-4 px-4">
     <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
         <div>
-            <h2 class="text-dark fw-bold mb-0">
+            <h2 class="fw-bold mb-0" style="color:var(--tx)">
                 <i class="fa-solid fa-user-gear text-danger"></i> ĐIỀU HÀNH VÉ & ĐIỂM DANH (ADMIN)
             </h2>
             <p class="text-muted small mb-0">Hệ thống cục bộ kiểm soát dòng tiền và trạng thái tham gia sự kiện.</p>
@@ -52,7 +52,7 @@
                                     <tr>
                                         <td class="text-center fw-bold text-secondary">#${b.bookingID}</td>
                                         <td>
-                                            <div class="fw-bold text-dark">${b.customerName}</div>
+                                            <div class="fw-bold" style="color:var(--tx)">${b.customerName}</div>
                                             <small class="text-muted"><i class="fa-solid fa-envelope"></i> ${b.customerEmail}</small>
                                         </td>
                                         <td class="fw-bold text-primary">${b.eventName}</td>
@@ -89,7 +89,7 @@
                                                     </a>
                                                 </c:when>
                                                 <c:when test="${b.status == 'ATTENDED'}">
-                                                    <button class="btn btn-light btn-sm disabled text-muted border">
+                                                    <button class="btn btn-state-complete btn-sm disabled">
                                                         <i class="fa-solid fa-check"></i> Hoàn Thành
                                                     </button>
                                                 </c:when>

@@ -30,7 +30,19 @@ public class EventRepository {
     }
 
     public List<Event> findAll() {
-        String sql = "SELECT e.*, c.category_name, v.venue_name "
+        String sql = ""
+                + "SELECT "
+                + "e.id AS event_id, "
+                + "e.category_id AS category_id, "
+                + "e.venue_id AS venue_id, "
+                + "e.event_name AS event_name, "
+                + "e.short_description AS short_description, "
+                + "e.description AS description, "
+                + "e.banner_image AS banner_image, "
+                + "e.status AS status, "
+                + "e.created_by AS created_by, "
+                + "c.category_name AS category_name, "
+                + "v.venue_name AS venue_name "
                 + "FROM events e "
                 + "JOIN event_categories c ON e.category_id = c.id "
                 + "JOIN venues v ON e.venue_id = v.id "

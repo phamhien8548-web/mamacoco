@@ -10,7 +10,7 @@
             <h4 class="mb-1 fw-bold">
                 <i class="fa-solid fa-shield-halved text-success"></i> UEF PAYMENT GATEWAY
             </h4>
-            <p class="small text-muted mb-0">Hệ thống mô phỏng thanh toán an toàn trực tuyến</p>
+            <p class="small payment-header-note mb-0">Hệ thống mô phỏng thanh toán an toàn trực tuyến</p>
         </div>
 
         <div class="card-body p-4">
@@ -26,16 +26,16 @@
                 <input type="hidden" name="bookingId" value="${bookingId}" />
 
                 <%-- Mã đơn hàng --%>
-                <div class="mb-3 text-center p-3 bg-light rounded border">
-                    <span class="text-secondary d-block small text-uppercase">Mã giao dịch đơn hàng</span>
+                <div class="payment-reference mb-3 text-center p-3 rounded">
+                    <span class="payment-reference-label d-block small text-uppercase">Mã giao dịch đơn hàng</span>
                     <strong class="text-danger fs-4">#${bookingId}</strong>
                 </div>
 
                 <%-- Số thẻ --%>
                 <div class="mb-3">
-                    <label class="form-label fw-bold text-secondary">Số Thẻ / Số Tài Khoản Ngân Hàng</label>
+                    <label class="form-label fw-bold">Số Thẻ / Số Tài Khoản Ngân Hàng</label>
                     <div class="input-group">
-                        <span class="input-group-text bg-white">
+                        <span class="input-group-text">
                             <i class="fa-solid fa-credit-card text-muted"></i>
                         </span>
                         <input type="text" name="cardNumber" class="form-control"
@@ -45,9 +45,9 @@
 
                 <%-- Tên chủ thẻ --%>
                 <div class="mb-3">
-                    <label class="form-label fw-bold text-secondary">Tên Chủ Thẻ (Không dấu)</label>
+                    <label class="form-label fw-bold">Tên Chủ Thẻ (Không dấu)</label>
                     <div class="input-group">
-                        <span class="input-group-text bg-white">
+                        <span class="input-group-text">
                             <i class="fa-solid fa-user text-muted"></i>
                         </span>
                         <input type="text" name="cardHolder" class="form-control"
@@ -59,11 +59,11 @@
                 <%-- Hạn thẻ & CVV --%>
                 <div class="row">
                     <div class="col-6 mb-3">
-                        <label class="form-label fw-bold text-secondary">Ngày hết hạn</label>
+                        <label class="form-label fw-bold">Ngày hết hạn</label>
                         <input type="text" class="form-control" placeholder="MM/YY" required />
                     </div>
                     <div class="col-6 mb-3">
-                        <label class="form-label fw-bold text-secondary">
+                        <label class="form-label fw-bold">
                             Mã CVV <span class="text-muted small">(3 số sau)</span>
                         </label>
                         <input type="password" name="cvv" class="form-control"

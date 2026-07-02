@@ -55,7 +55,7 @@
             <div class="col-lg-4">
                 <label class="form-label fw-bold">Từ khóa</label>
                 <div class="input-group">
-                    <span class="input-group-text bg-white"><i class="fa-solid fa-magnifying-glass text-danger"></i></span>
+                    <span class="input-group-text"><i class="fa-solid fa-magnifying-glass text-danger"></i></span>
                     <input type="text"
                            name="keyword"
                            value="${keyword}"

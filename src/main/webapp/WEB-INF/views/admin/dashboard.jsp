@@ -5,7 +5,7 @@
 <div class="container-fluid my-4 px-4">
     <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
         <div>
-            <h2 class="text-dark fw-bold mb-0">
+            <h2 class="fw-bold mb-0" style="color:var(--tx)">
                 <i class="fa-solid fa-chart-pie text-danger"></i> BẢNG ĐIỀU KHIỂN THỐNG KÊ
             </h2>
             <p class="text-muted small mb-0">Theo dõi doanh thu và lượt tham gia sự kiện theo thời gian thực.</p>
@@ -19,7 +19,7 @@
 
     <div class="row mb-4">
         <div class="col-md-6 mb-3 mb-md-0">
-            <div class="card bg-primary text-white shadow border-0 rounded-3 h-100 overflow-hidden">
+            <div class="card stat-card-primary text-white shadow border-0 rounded-3 h-100 overflow-hidden">
                 <div class="card-body position-relative p-4">
                     <div class="fw-bold text-uppercase mb-1 opacity-75">Tổng Doanh Thu Hệ Thống</div>
                     <h2 class="fw-bold mb-0 display-6">
@@ -31,7 +31,7 @@
         </div>
         
         <div class="col-md-6">
-            <div class="card bg-success text-white shadow border-0 rounded-3 h-100 overflow-hidden">
+            <div class="card stat-card-success text-white shadow border-0 rounded-3 h-100 overflow-hidden">
                 <div class="card-body position-relative p-4">
                     <div class="fw-bold text-uppercase mb-1 opacity-75">Tổng Số Vé Đã Bán & Phê Duyệt</div>
                     <h2 class="fw-bold mb-0 display-6">
@@ -45,9 +45,9 @@
 
     <div class="row">
         <div class="col-lg-8 mb-4">
-            <div class="card shadow-sm border-0 rounded-3 h-100">
-                <div class="card-header bg-white py-3">
-                    <h6 class="mb-0 fw-bold text-secondary text-uppercase"><i class="fa-solid fa-chart-column"></i> BIỂU ĐỒ DOANH THU THEO SỰ KIỆN</h6>
+            <div class="card chart-card shadow-sm border-0 rounded-3 h-100">
+                <div class="card-header py-3">
+                    <h6 class="mb-0 fw-bold text-uppercase" style="color:var(--tx2)"><i class="fa-solid fa-chart-column"></i> BIỂU ĐỒ DOANH THU THEO SỰ KIỆN</h6>
                 </div>
                 <div class="card-body">
                     <canvas id="revenueChart" style="min-height: 300px;"></canvas>
@@ -56,9 +56,9 @@
         </div>
 
         <div class="col-lg-4 mb-4">
-            <div class="card shadow-sm border-0 rounded-3 h-100">
-                <div class="card-header bg-white py-3">
-                    <h6 class="mb-0 fw-bold text-secondary text-uppercase"><i class="fa-solid fa-chart-doughnut"></i> TỈ LỆ TRẠNG THÁI VÉ</h6>
+            <div class="card chart-card shadow-sm border-0 rounded-3 h-100">
+                <div class="card-header py-3">
+                    <h6 class="mb-0 fw-bold text-uppercase" style="color:var(--tx2)"><i class="fa-solid fa-chart-doughnut"></i> TỈ LỆ TRẠNG THÁI VÉ</h6>
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-center">
                     <canvas id="attendanceChart" style="max-height: 300px;"></canvas>

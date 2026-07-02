@@ -8,12 +8,11 @@
             <c:choose>
                 <c:when test="${not empty event.bannerImage}">
                     <img src="${ctx}/assets/uploads/events/${event.bannerImage}"
-                         class="img-fluid h-100 w-100"
-                         style="min-height: 420px; object-fit: cover;"
+                         class="img-fluid h-100 w-100 event-detail-image"
                          alt="${event.eventName}">
                 </c:when>
                 <c:otherwise>
-                    <div class="event-image-placeholder h-100" style="min-height: 420px;">
+                    <div class="event-image-placeholder h-100 event-detail-image">
                         <i class="fa-solid fa-image fa-3x"></i>
                     </div>
                 </c:otherwise>
@@ -32,7 +31,7 @@
 
                 <div class="row g-3 my-4">
                     <div class="col-md-6">
-                        <div class="p-3 bg-light border rounded-3 h-100">
+                        <div class="info-tile">
                             <div class="fw-bold text-danger mb-1">
                                 <i class="fa-solid fa-location-dot me-1"></i>Địa điểm
                             </div>
@@ -40,7 +39,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="p-3 bg-light border rounded-3 h-100">
+                        <div class="info-tile">
                             <div class="fw-bold text-danger mb-1">
                                 <i class="fa-solid fa-ticket me-1"></i>Loại sự kiện
                             </div>

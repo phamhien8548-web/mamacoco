@@ -39,4 +39,9 @@ public class EventImageService {
     public void deleteImage(int id) {
         eventImageRepository.delete(id);
     }
+
+    // Hàm cập nhật ảnh
+    public void updateImage(EventImage img) {
+        eventImageRepository.update(img); // Gọi hàm update vừa thêm ở trên
+    }
 }

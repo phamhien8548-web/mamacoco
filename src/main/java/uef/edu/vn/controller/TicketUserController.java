@@ -63,12 +63,12 @@ public class TicketUserController {
     @PostMapping("/book")
     public String processBooking(@ModelAttribute("booking") Booking booking, Model model) {
         try {
-            // LẤY TÊN SỰ KIỆN TỪ DB VÀ GÁN VÀO BOOKING TRƯỚC KHI SAVE
+            // === BỔ SUNG: Lấy tên sự kiện dựa vào eventId truyền lên từ form ẩn ===
             Event currentEvent = eventService.findById(booking.getEventId());
             if (currentEvent != null) {
-                // Hãy kiểm tra xem hàm lấy tên của lớp Event là getEventName() hay getTitle() nhé
-                booking.setEventName(currentEvent.getEventName());
+                booking.setEventName(currentEvent.getEventName()); // Điền tên sự kiện vào Java object
             }
+            // ======================================================================
 
             ticketService.saveBooking(booking);
             return "redirect:/user/tickets/payment?bookingId=" + booking.getBookingID();
